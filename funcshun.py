@@ -18,3 +18,23 @@ def is_prime(n):
         if n % i == 0:
             return False
     return True
+
+
+def find_unique(lst):
+    counts = {}
+    for item in lst:
+        counts[item] = counts.get(item, 0) + 1
+    for item, count in counts.items():
+        if count == 1:
+            return item
+    return None
+
+
+def group_by_length(words):
+    grouped = {}
+    for word in words:
+        length = len(word)
+        if length not in grouped:
+            grouped[length] = []
+        grouped[length].append(word)
+    return grouped
